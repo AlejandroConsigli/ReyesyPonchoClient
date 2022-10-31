@@ -1,0 +1,16 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.button {
+    padding: 5px 10px;
+    background: transparent;
+    border: none;
+    font-size: $normal-font;
+    color: $light;
+    cursor: pointer;
+    font-family: "Roboto Mono", monospace;
+    -webkit-tap-highlight-color: transparent;
+    &:hover {
+        color: $normal;
+    }
+}

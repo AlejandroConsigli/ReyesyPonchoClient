@@ -1,0 +1,9 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.adminLayout {
+    background: url("../../../shared/assets/backgrounds/admin.jpg") $dark no-repeat center center / cover;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}

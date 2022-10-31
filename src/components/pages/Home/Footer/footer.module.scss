@@ -1,0 +1,81 @@
+@import "../../../../shared/styles/common.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.container {
+    .content {
+        min-height: 300px;
+        height: 40vw;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../../../../shared/assets/backgrounds/footer.jpg");
+        background-color: $normal;
+        background-position: center 12%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: $light;
+            padding: 25px;
+            justify-content: space-between;
+            position: relative;
+            .title {
+                font-size: $huge-font;
+                text-transform: uppercase;
+                font-weight: 200;
+                margin: 0;
+                text-align: center;
+            }
+            .hashtag {
+                position: absolute;
+                font-size: $normal-font;
+                font-weight: 200;
+                background-color: $dark;
+                opacity: 0.5;
+                top: 45%;
+                right: 0;
+                padding: 10px;
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                .contactTitle {
+                    text-transform: uppercase;
+                    font-size: $normal-font;
+                    font-weight: 200;
+                }
+                .contactNumber {
+                    font-size: $small-font;
+                    font-weight: 200;
+                    text-transform: uppercase;
+                    a {
+                        text-decoration: underline;
+                        text-decoration-thickness: 1px;
+                        color: $light-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            background-position: center 5%;
+            .info {
+                .hashtag {
+                    font-size: $small-font;
+                }
+                .contact {
+                    .contactTitle {
+                        font-size: $small-font;
+                    }
+                    .contactNumber {
+                        font-size: $tiny-font;
+                    }
+                }
+            }
+        }
+    }
+}

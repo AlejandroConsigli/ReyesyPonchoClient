@@ -1,0 +1,135 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.container {
+    .content {
+        flex-direction: column;
+        .title {
+            text-align: center;
+            width: 100%;
+            margin: 30px 0;
+            span {
+                font-size: $big-font;
+                color: $light;
+            }
+        }
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+            .card {
+                width: 90%;
+                .rows {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: row;
+                    padding: 15px;
+                    background-color: $light;
+                    .date,
+                    .answer,
+                    .fullName,
+                    .message {
+                        font-size: $tiny-font;
+                        display: flex;
+                        padding: 0 10px;
+                    }
+                    .date,
+                    .answer,
+                    .fullName {
+                        @include flex-center;
+                        text-align: center;
+                    }
+                    .answer {
+                        font-weight: bold;
+                        cursor: pointer;
+                        color: inherit;
+                    }
+                    .date,
+                    .answer {
+                        flex: 1;
+                    }
+                    .fullName {
+                        flex: 3;
+                    }
+                    .message {
+                        flex: 12;
+                        margin-right: 40px;
+                    }
+                    .yes-answers {
+                        color: $success;
+                    }
+                    .no-answers {
+                        color: $error;
+                    }
+                }
+                .noConfirmations {
+                    @include flex-center;
+                    margin-top: 20px;
+                    .noConfirmationsMessage {
+                        font-size: $small-font;
+                        color: $light;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    @include flex-center;
+    flex-direction: column;
+    background-color: $dark;
+    border: 2px solid $light;
+    color: $light;
+    border-radius: 10px;
+    padding: 20px;
+    outline: none;
+    .text {
+        font-size: $normal-font;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        .delete {
+            color: $error;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            .info {
+                .card {
+                    .rows {
+                        .date,
+                        .answer,
+                        .fullName {
+                            flex: 1;
+                        }
+                        .message {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal {
+        width: 90%;
+        padding: 10px;
+        .text {
+            font-size: $small-font;
+        }
+    }
+}

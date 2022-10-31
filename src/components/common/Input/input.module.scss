@@ -1,0 +1,42 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px 20px 5px;
+    min-width: 100px;
+    .label {
+        margin-bottom: 5px;
+        font-size: $small-font;
+        color: $light;
+    }
+    .input {
+        height: 30px;
+        font-size: $small-font;
+        color: $light;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $normal;
+        outline: none;
+        caret-color: $light;
+        font-family: "Roboto Mono", monospace;
+        padding: 0 5px;
+        -webkit-tap-highlight-color: transparent;
+        &::placeholder {
+            color: $normal;
+        }
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            -webkit-text-fill-color: $light !important;
+            -webkit-line-clamp: red !important;
+            -webkit-text-size-adjust: unset;
+            -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+        &:-webkit-autofill::first-line {
+            font-size: $small-font;
+        }
+    }
+}

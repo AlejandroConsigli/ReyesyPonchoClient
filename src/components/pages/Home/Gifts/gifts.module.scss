@@ -1,0 +1,87 @@
+@import "../../../../shared/styles/common.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.container {
+    .content {
+        min-height: 300px;
+        background-color: $dark-primary;
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: $light;
+            padding: 50px 25px;
+            justify-content: space-between;
+            align-items: center;
+            .title {
+                font-size: $huge-font;
+                text-transform: uppercase;
+                font-weight: 200;
+                margin: 0;
+                text-align: center;
+            }
+            .answer {
+                padding: 10px 0;
+                text-align: center;
+                font-size: $small-font;
+                text-transform: uppercase;
+                font-weight: 200;
+            }
+            .text {
+                .group {
+                    @include flex-center;
+                    flex-direction: column;
+                    padding: 20px;
+                    text-align: center;
+                    margin-top: 30px;
+                    .line {
+                        font-size: $small-font;
+                        font-weight: 200;
+                        text-transform: uppercase;
+                        .action {
+                            cursor: pointer;
+                            text-decoration: underline;
+                            text-decoration-thickness: 1px;
+                            color: $light-primary;
+                            text-transform: none;
+                            a {
+                                text-decoration: inherit;
+                                color: inherit;
+                            }
+                        }
+                    }
+                    .important {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: $normal-primary;
+                        padding: 10px 20px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            .info {
+                .title {
+                    font-size: $normal-font;
+                }
+                .answer {
+                    font-size: $tiny-font;
+                }
+                .text {
+                    .group {
+                        padding: 0;
+                        .line {
+                            font-size: $tiny-font;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

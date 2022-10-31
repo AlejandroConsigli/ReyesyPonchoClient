@@ -1,0 +1,21 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.container {
+    @include flex-center;
+    justify-content: space-between;
+    .input {
+        display: none;
+    }
+    .label {
+        cursor: pointer;
+        color: $normal;
+        -webkit-tap-highlight-color: transparent;
+        &:hover {
+            color: $light;
+        }
+    }
+    .active {
+        color: $light;
+    }
+}

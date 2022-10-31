@@ -1,0 +1,152 @@
+@import "../../../../shared/styles/common.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.container {
+    .content {
+        min-height: 500px;
+        background-color: $light;
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: $dark;
+            padding: 75px 25px;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
+            .title,
+            .subtitle {
+                text-transform: uppercase;
+                font-weight: 200;
+                margin: 0;
+                text-align: center;
+            }
+            .title {
+                font-size: $giant-font;
+            }
+            .subtitle {
+                font-size: $small-font;
+                margin-top: 10px;
+            }
+            .data {
+                flex: 1;
+                @include flex-center;
+                width: 80%;
+                margin-top: 50px;
+                .churchParty {
+                    flex: 1;
+                    @include flex-center;
+                    flex-direction: column;
+                    .imageContainer {
+                        background-color: $dark-primary;
+                        border-radius: 50%;
+                        padding: 15px;
+                        .image {
+                            width: 100px;
+                        }
+                    }
+                    .divider {
+                        width: 50%;
+                        height: 0.25px;
+                        border-width: 0;
+                        background-color: $dark;
+                        margin: 20px 0;
+                    }
+                    .name,
+                    .label {
+                        text-transform: uppercase;
+                        font-weight: 200;
+                        margin: 0;
+                        text-align: center;
+                    }
+                    .name {
+                        font-size: $normal-font;
+                        margin-bottom: 10px;
+                        font-weight: 400;
+                    }
+                    .label {
+                        font-size: $tiny-font;
+                    }
+                    a {
+                        color: $dark-primary;
+                        display: flex;
+                        flex-direction: column;
+                        cursor: pointer;
+                        text-decoration: underline;
+                        text-decoration-thickness: 1px;
+                    }
+                }
+            }
+            .map {
+                margin-top: 50px;
+                text-align: center;
+                a {
+                    width: auto;
+                    .image {
+                        width: 60%;
+                    }
+                }
+            }
+            .suggestionSdivider {
+                width: 50%;
+                height: 0.25px;
+                border-width: 0;
+                background-color: $dark-primary;
+                margin: 50px 0;
+            }
+            .suggestions {
+                width: 75%;
+                @include flex-center;
+                flex-direction: column;
+                .label {
+                    text-transform: uppercase;
+                    font-weight: 200;
+                    margin: 0;
+                    text-align: center;
+                    font-size: $small-font;
+                    margin-bottom: 30px;
+                    color: $dark-primary;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            .info {
+                .title {
+                    font-size: $huge-font;
+                }
+                .subtitle {
+                    font-size: $small-font;
+                }
+                .data {
+                    flex-direction: column;
+                    .churchParty {
+                        &:first-of-type {
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+                .map {
+                    a {
+                        .image {
+                            width: 90%;
+                        }
+                    }
+                }
+                .suggestionSdivider {
+                    width: 75%;
+                }
+                .suggestions {
+                    width: 90%;
+                    .label {
+                        font-size: $tiny-font;
+                    }
+                }
+            }
+        }
+    }
+}

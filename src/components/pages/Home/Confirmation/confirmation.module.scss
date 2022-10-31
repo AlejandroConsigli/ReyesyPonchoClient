@@ -1,0 +1,155 @@
+@import "../../../../shared/styles/common.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.container {
+    .content {
+        min-height: 500px;
+        background: linear-gradient(
+            $normal-primary,
+            $normal-primary 80%,
+            $dark-primary 80%,
+            $dark-primary 100%
+        );
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: $light;
+            padding: 50px 25px;
+            .title,
+            .subtitle {
+                text-transform: uppercase;
+                font-weight: 200;
+                margin: 0;
+                text-align: center;
+            }
+            .title {
+                font-size: $huge-font;
+            }
+            .subtitle {
+                font-size: $normal-font;
+                margin-top: 10px;
+            }
+            .data {
+                display: flex;
+                flex: 1;
+                padding-top: 30px;
+                .imageDiv {
+                    flex: 3;
+                    @include flex-center;
+                    .image {
+                        width: 70%;
+                    }
+                }
+                .formDiv {
+                    flex: 4;
+                    @include flex-center;
+                    align-items: flex-start;
+                    .form {
+                        width: 70%;
+                        .input,
+                        .textarea {
+                            margin: 20px;
+                            span {
+                                font-weight: 200;
+                                text-transform: uppercase;
+                            }
+                            input,
+                            textarea {
+                                font-weight: 200;
+                                background-color: $dark-primary;
+                                border: none;
+                            }
+                        }
+                        .textarea {
+                            textarea {
+                                height: 10vw;
+                            }
+                        }
+                        .checkboxRadio {
+                            margin-bottom: 20px;
+                            label {
+                                margin: 5px;
+                                text-align: center;
+                                padding: 5px 15px;
+                                background-color: $dark-primary;
+                                text-transform: uppercase;
+                                font-size: $small-font;
+                                font-weight: 200;
+                            }
+                        }
+                        .bottom {
+                            margin-bottom: 20px;
+                            @include flex-center;
+                            .sent {
+                                font-size: $small-font;
+                                font-weight: 200;
+                                text-transform: uppercase;
+                                padding-bottom: 10px;
+                            }
+                            .button {
+                                background-color: $dark-primary;
+                                font-weight: 200;
+                                font-size: $small-font;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            .info {
+                .title {
+                    font-size: $normal-font;
+                }
+                .subtitle {
+                    font-size: $tiny-font;
+                }
+                .data {
+                    flex-direction: column-reverse;
+                    .imageDiv {
+                        .image {
+                            width: 80%;
+                        }
+                    }
+                    .formDiv {
+                        .form {
+                            width: 100%;
+                            margin-bottom: 20px;
+                            .textarea {
+                                margin: 20px;
+                                textarea {
+                                    height: 100px;
+                                }
+                            }
+                            .input,
+                            .textarea {
+                                span,
+                                input,
+                                textarea {
+                                    font-size: $tiny-font;
+                                }
+                            }
+                            .checkboxRadio {
+                                label {
+                                    font-size: $small-font;
+                                }
+                            }
+                            .bottom {
+                                .sent {
+                                    font-size: $small-font;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

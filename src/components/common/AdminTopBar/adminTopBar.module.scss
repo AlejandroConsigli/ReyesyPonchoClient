@@ -1,0 +1,71 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.adminTopBar {
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    span {
+        padding: 5px 10px;
+        font-size: $normal-font;
+        color: $light;
+    }
+    .menu {
+        width: 20px;
+    }
+}
+
+.drawer {
+    display: flex;
+    min-width: 200px;
+    background-color: transparent !important;
+    margin-top: 60px;
+    .drawerLinks {
+        flex: 1;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        .drawerTop,
+        .drawerLink {
+            @include flex-center;
+            color: $light;
+            width: 100%;
+            height: 60px;
+            font-size: $small-font;
+        }
+        .drawerLink {
+            cursor: pointer;
+            &:hover {
+                background-color: $normal;
+                color: $dark;
+            }
+            a {
+                flex: 1;
+                @include flex-center;
+                text-decoration: none;
+                color: inherit;
+                height: 100%;
+            }
+        }
+        .activeLink {
+            background-color: $light;
+            color: $dark;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .adminTopBar {
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0 20px;
+        span {
+            padding: 5px;
+            font-size: $small-font;
+        }
+    }
+}

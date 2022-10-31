@@ -1,0 +1,75 @@
+@import "../../../../shared/styles/common.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.container {
+    .content {
+        min-height: 400px;
+        height: 35vw;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../../../../shared/assets/backgrounds/counter.jpg");
+        background-color: $normal;
+        background-position: center 15%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: $light;
+            padding: 25px;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
+            .title {
+                font-size: $huge-font;
+                text-transform: uppercase;
+                font-weight: 200;
+                margin: 0;
+                text-align: center;
+            }
+            .timer {
+                display: flex;
+                justify-content: space-between;
+                max-width: 768px;
+                width: 100%;
+                padding-bottom: 10px;
+                .timerDivider {
+                    @include flex-center;
+                    flex-direction: column;
+                    .timerData,
+                    .timerLabel {
+                        font-size: $small-font;
+                        font-weight: 200;
+                        text-transform: uppercase;
+                    }
+                    .timerData {
+                        font-size: $giant-font;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            .info {
+                .title {
+                    font-size: $big-font;
+                }
+                .timer {
+                    .timerDivider {
+                        .timerData,
+                        .timerLabel {
+                            font-size: $tiny-font;
+                        }
+                        .timerData {
+                            font-size: $huge-font;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    .label {
+        margin-bottom: 5px;
+        font-size: $small-font;
+        color: $light;
+    }
+    .textarea {
+        font-family: inherit;
+        margin: 0;
+        font-size: $small-font;
+        color: $light;
+        background-color: transparent;
+        border: none;
+        border: 1px solid $normal;
+        outline: none;
+        caret-color: $light;
+        height: 150px;
+        resize: none;
+        padding: 5px;
+        &::placeholder {
+            color: $normal;
+        }
+    }
+}

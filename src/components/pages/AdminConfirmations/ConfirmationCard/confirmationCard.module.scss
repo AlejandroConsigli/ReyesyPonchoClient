@@ -1,0 +1,80 @@
+@import "../../../../shared/styles/common.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.confirmationCard {
+    display: flex;
+    align-items: flex-end;
+    border-top: 1px solid $light;
+    position: relative;
+    .rows {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        padding: 5px 15px;
+        .date,
+        .answer,
+        .fullName,
+        .message {
+            color: $light;
+            font-size: $tiny-font;
+            display: flex;
+            padding: 0 10px;
+        }
+        .date {
+            font-size: $tiny-font;
+        }
+        .date,
+        .answer,
+        .fullName {
+            @include flex-center;
+            text-align: center;
+        }
+        .date,
+        .answer {
+            flex: 1;
+        }
+        .fullName {
+            flex: 3;
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .message {
+            flex: 12;
+            margin-right: 40px;
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .actions {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        bottom: 0;
+        @include flex-center;
+        .action {
+            color: $light;
+            font-size: $small-font;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .confirmationCard {
+        .rows {
+            padding: 15px;
+            .date,
+            .answer,
+            .fullName {
+                flex: 1;
+            }
+            .message {
+                display: none;
+            }
+        }
+    }
+}

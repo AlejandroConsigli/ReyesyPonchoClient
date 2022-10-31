@@ -1,0 +1,10 @@
+@import "../../../shared/styles/common.scss";
+@import "../../../shared/styles/variables.scss";
+
+.body {
+    min-width: 100%;
+    min-height: 100%;
+    // min-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+}
